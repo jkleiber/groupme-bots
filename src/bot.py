@@ -49,6 +49,6 @@ class Bot:
 			os.remove(filename)
 			return imageurl
 
-	def sender_is_bot(message):
+	def sender_is_bot(self, message):
 		""" Checks whether the message sender is a bot """
 		return message['sender_type'] == "bot"
