@@ -2,13 +2,13 @@
 # This code is also based on BenDMyers' boilerplate groupme bot, found here: https://github.com/BenDMyers/Boilerplate_GroupMe_Bot
 
 # IMPORTS
-import os
 import json
+import os
 
-from bot import Bot
+from flask import Flask, request
+from src.snek.snek import Snek
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -16,7 +16,7 @@ app = Flask(__name__)
 snek_id = "b0fc5b9a00b6b72c1ba2f314c8"
 
 # Bots
-Snek snek(snek_id)
+snek = Snek(snek_id)
 
 # Called whenever the app's callback URL receives a POST request
 # That'll happen every time a message is sent in the group
@@ -28,4 +28,3 @@ def webhook():
 	snek.sendSnek(message)
 
 	return "ok", 200
-
