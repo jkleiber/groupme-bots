@@ -1,6 +1,15 @@
 """
  General class for a bot. Use this to send messages and perform other actions
 """
+
+# IMPORTS
+import json
+import os
+
+from flask import Flask, request
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+
 class Bot:
 
 	def __init__(self, ID: str):
