@@ -48,7 +48,7 @@ def project_manager_webhook():
     return "ok", 200
 
 @app.route('/statusreports', methods=['POST'])
-def project_manager_webhook():
+def status_report_webhook():
     # Remind everyone in the channel to send status reports
     pm.status_report_reminder(message)
 
