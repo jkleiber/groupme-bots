@@ -17,7 +17,7 @@ from src.snek.snek import Snek
 app = Flask(__name__)
 
 # Bot IDs
-pm_id = "764cc41f34f6b5ddcfcdc225ca"
+pm_id = "0f9731e90b0f5d15fe222b5e5c"#"764cc41f34f6b5ddcfcdc225ca"
 snek_id = "b0fc5b9a00b6b72c1ba2f314c8"
 
 # Bots
