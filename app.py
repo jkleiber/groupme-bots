@@ -28,23 +28,23 @@ snek = Snek(snek_id)
 # That'll happen every time a message is sent in the group
 @app.route('/', methods=['POST'])
 def webhook():
-	# 'message' is an object that represents a single GroupMe message.
-	message = request.get_json()
+    # 'message' is an object that represents a single GroupMe message.
+    message = request.get_json()
 
     # Use your favorite bot here
-	# snek.sendSnek(message)
+    # snek.sendSnek(message)
 
-	return "ok", 200
+    return "ok", 200
 
 # Called for the project manager bot
 @app.route('/projectmanager', methods=['POST'])
 def project_manager_webhook():
     # 'message' is an object that represents a single GroupMe message.
-	message = request.get_json()
+    message = request.get_json()
 
     # Use your favorite bot here
-	pm.manage_project(message)
+    pm.manage_project(message)
 
     print("yeet")
 
-	return "ok", 200
+    return "ok", 200
