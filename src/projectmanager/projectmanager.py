@@ -19,9 +19,13 @@ class ProjectManager(Bot):
         super().__init__(id)
 
     def manage_project(self, message = None):
-        if "@Project Manager Bot" in message.text or "@PM" in message.text:
-            n = randint(0, len(self.project_jargon) - 1)
-            self.reply(self.project_jargon[n])
+        try:
+            if "@Project Manager Bot" in message['text'] or "@PM" in message['text']:
+                n = randint(0, len(self.project_jargon) - 1)
+                self.reply(self.project_jargon[n])
+        except KeyError:
+            pass
+
 
     def status_report_reminder(self):
         self.reply("Remember to send your status reports in so the project can be managed!")
