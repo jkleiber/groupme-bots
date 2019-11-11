@@ -11,7 +11,7 @@ class ProjectManager(Bot):
         "Let's sync up on our goals to keep the project moving along smoothly",
         "The higher ups want a report by Friday, so let's prioritize the critical tasks",
         "This sprint we have made good progress on the critical path, so we are back on schedule",
-        ""
+        "Our burndown is coming along well, let's finish this sprint strong!"
     ]
 
     def __init__(self, id):
