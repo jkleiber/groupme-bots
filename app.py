@@ -42,9 +42,14 @@ def project_manager_webhook():
     # 'message' is an object that represents a single GroupMe message.
     message = request.get_json()
 
-    # Use your favorite bot here
+    # respond to users and manage the project
     pm.manage_project(message)
 
-    print("yeet")
+    return "ok", 200
+
+@app.route('/projectmanager/statusreports', methods=['POST'])
+def project_manager_webhook():
+    # Remind everyone in the channel to send status reports
+    pm.status_report_reminder(message)
 
     return "ok", 200

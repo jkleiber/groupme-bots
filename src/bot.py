@@ -37,7 +37,7 @@ class Bot:
 		}
 		request = Request(url, urlencode(data).encode())
 		json = urlopen(request).read().decode()
-	
+
 	def upload_image_to_groupme(self, imgURL: str):
 		""" Uploads image to GroupMe's services and returns the new URL """
 		imgRequest = requests.get(imgURL, stream=True)
