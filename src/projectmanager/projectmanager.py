@@ -1,4 +1,6 @@
 
+from random import randint
+
 from src.bot import Bot
 
 class ProjectManager(Bot):
