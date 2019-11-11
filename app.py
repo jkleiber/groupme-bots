@@ -6,16 +6,22 @@ import json
 import os
 
 from flask import Flask, request
-from src.snek.snek import Snek
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+
+# Bot imports
+from src.projectmanager.projectmanager import ProjectManager
+from src.snek.snek import Snek
+
 
 app = Flask(__name__)
 
 # Bot IDs
+pm_id = "764cc41f34f6b5ddcfcdc225ca"
 snek_id = "b0fc5b9a00b6b72c1ba2f314c8"
 
 # Bots
+pm = ProjectManager(pm_id)
 snek = Snek(snek_id)
 
 # Called whenever the app's callback URL receives a POST request
@@ -25,6 +31,20 @@ def webhook():
 	# 'message' is an object that represents a single GroupMe message.
 	message = request.get_json()
 
-	snek.sendSnek(message)
+    # Use your favorite bot here
+	# snek.sendSnek(message)
+
+	return "ok", 200
+
+# Called for the project manager bot
+@app.route('/projectmanager', methods=['POST'])
+def project_manager_webhook():
+    # 'message' is an object that represents a single GroupMe message.
+	message = request.get_json()
+
+    # Use your favorite bot here
+	pm.manage_project(message)
+
+    print("yeet")
 
 	return "ok", 200
